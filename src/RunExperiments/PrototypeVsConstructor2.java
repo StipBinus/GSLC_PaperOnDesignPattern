@@ -1,4 +1,4 @@
-package SecItteration;
+package RunExperiments;
 
 import Main.Car;
 import Main.CarRegist;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PrototypeVsConstructor {
+public class PrototypeVsConstructor2 {
 
     private static class Result {
         final long nanos;

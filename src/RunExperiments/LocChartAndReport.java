@@ -1,11 +1,14 @@
-package Main;
+package RunExperiments;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.CategoryChart;
 import org.knowm.xchart.CategoryChartBuilder;
 import org.knowm.xchart.style.Styler;
+import org.knowm.xchart.SwingWrapper;
 
+import java.awt.GraphicsEnvironment;
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,8 +20,20 @@ import java.util.Map;
 public class LocChartAndReport {
 
     public static void main(String[] args) throws Exception {
+        // Prefer project-relative ./charts, but fall back to a writable user-home location if permission denied
         Path chartsDir = Path.of(System.getProperty("user.dir"), "charts");
-        Files.createDirectories(chartsDir);
+        try {
+            Files.createDirectories(chartsDir);
+        } catch (AccessDeniedException ade) {
+            chartsDir = fallbackChartsDir();
+            Files.createDirectories(chartsDir);
+            System.err.println("Permission denied creating project charts directory; using fallback: " + chartsDir);
+        } catch (IOException ioe) {
+            // Generic IO problem (e.g., running from System32); fall back as well
+            chartsDir = fallbackChartsDir();
+            Files.createDirectories(chartsDir);
+            System.err.println("Unable to create project charts directory; using fallback: " + chartsDir + " (" + ioe.getMessage() + ")");
+        }
 
         Path csv = chartsDir.resolve("loc_results.csv");
 
@@ -109,7 +124,19 @@ public class LocChartAndReport {
         Path outPng = chartsDir.resolve("loc_chart.png");
         BitmapEncoder.saveBitmap(chart, outPng.toString(), BitmapEncoder.BitmapFormat.PNG);
 
+        // If running in a graphical environment, show the chart window as well
+        if (!GraphicsEnvironment.isHeadless()) {
+            // Display the chart in a Swing window
+            new SwingWrapper<>(chart).displayChart();
+        } else {
+            System.out.println("Headless environment detected: chart image saved to " + outPng.toString());
+        }
+
         System.out.println("Chart saved to: " + outPng.toString());
+    }
+
+    private static Path fallbackChartsDir() {
+        return Path.of(System.getProperty("user.home"), "GSLC_PaperOnDesignPattern", "charts");
     }
 
     private static String genDirPathInfo() {

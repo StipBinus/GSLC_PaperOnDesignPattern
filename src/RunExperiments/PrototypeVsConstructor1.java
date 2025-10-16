@@ -1,4 +1,7 @@
-package Main;
+package RunExperiments;
+
+import Main.Car;
+import Main.CarRegist;
 
 import org.knowm.xchart.BitmapEncoder;
 import org.knowm.xchart.SwingWrapper;
@@ -13,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ExperimentRunner {
+public class PrototypeVsConstructor1 {
 
     private static class Result {
         final long nanos;
@@ -26,8 +29,8 @@ public class ExperimentRunner {
 
     public static void main(String[] args) throws Exception {
         // Use a small heavy data size so prototype vs constructor look identical on the chart
-        Car.setHeavyDataSize(1); 
-        System.out.println("ExperimentRunner: HEAVY_DATA_SIZE=" + Car.HEAVY_DATA_SIZE + " bytes");
+        Car.setHeavyDataSize(1);
+        System.out.println("PrototypeVsConstructor1: HEAVY_DATA_SIZE=" + Car.HEAVY_DATA_SIZE + " bytes");
 
         Car base = new Car(
                 "Toyota",
