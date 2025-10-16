@@ -16,6 +16,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+ Ringkasan (komentar singkat penting, dalam Bahasa Indonesia):
+ 1) Set `heavyDataSize` untuk membuat konstruksi `Car` mahal memori/waktu.
+ 2) Buat sebuah prototype dan daftarkan pada `CarRegist`.
+ 3) Lakukan pemanasan (warm-up) untuk mengurangi noise JIT.
+ 4) Jalankan eksperimen untuk beberapa ukuran N, ukur waktu & penggunaan memori.
+ 5) Bangun chart (waktu & memori) dan simpan sebagai PNG di folder `charts/`.
+
+ Fungsi penting:
+ - `runPrototype` dan `runNoPrototype`: menjalankan N konstruksi dan mengembalikan hasil (waktu + delta memori).
+ - `saveChart` / `styleChart`: menyesuaikan dan menyimpan chart.
+*/
+
 public class PrototypeVsConstructor2 {
 
     private static class Result {
@@ -28,8 +41,8 @@ public class PrototypeVsConstructor2 {
     }
 
     public static void main(String[] args) throws Exception {
-        // Make heavy initialization much larger so constructing each Car is expensive
-        Car.setHeavyDataSize(3_000_000); // ~3 MB per Car construction
+        // Atur ukuran data berat sehingga pembuatan setiap Car menjadi mahal (memori & waktu)
+        Car.setHeavyDataSize(3_000_000); // ~3 MB per konstruksi Car
 
         Car base = new Car(
                 "Tesla",
@@ -42,16 +55,16 @@ public class PrototypeVsConstructor2 {
         CarRegist registry = new CarRegist();
         registry.addPrototype("ev", base);
 
-        // Larger sizes to amplify difference
+        // Ukuran percobaan (lebih besar untuk memperjelas perbedaan)
         int[] sizes = new int[] { 1, 50, 100, 200 };
 
         System.out.println("Running secondary iteration: heavyDataSize=" + Car.HEAVY_DATA_SIZE + " bytes");
 
-        // Warm-up
+        // Pemanasan (warm-up) untuk mengurangi noise JIT
         runPrototype(registry, "ev", 20);
         runNoPrototype(base, 20);
 
-        // Prepare arrays to collect data for charting
+        // Siapkan array untuk mengumpulkan data (x = N, dan serangkaian hasil waktu/memori)
         double[] x = Arrays.stream(sizes).asDoubleStream().toArray();
         double[] timeProtoMs = new double[sizes.length];
         double[] timeNoProtoMs = new double[sizes.length];
@@ -77,7 +90,7 @@ public class PrototypeVsConstructor2 {
                     n, pMs, pKB, cMs, cKB);
         }
 
-        // Build and display charts (time and memory) and save to charts/ folder
+        // Bangun dan tampilkan chart (waktu dan memori), lalu simpan ke folder charts/
         XYChart timeChart = new XYChartBuilder()
                 .width(800).height(600)
                 .title("Secondary: Total Execution Time vs Number of Objects")
@@ -109,6 +122,7 @@ public class PrototypeVsConstructor2 {
     }
 
     private static void styleChart(XYChart chart) {
+        // Atur tampilan chart: tampilkan legend, ukuran marker, dan pola desimal
         chart.getStyler().setLegendVisible(true);
         chart.getStyler().setMarkerSize(6);
         chart.getStyler().setDecimalPattern("#,###.##");
@@ -121,11 +135,12 @@ public class PrototypeVsConstructor2 {
             if (dir != null) Files.createDirectories(dir);
             BitmapEncoder.saveBitmap(chart, path.toString(), BitmapEncoder.BitmapFormat.PNG);
         } catch (IOException e) {
-            System.err.println("Failed to save chart: " + e.getMessage());
+            System.err.println("Gagal menyimpan chart: " + e.getMessage());
         }
     }
 
     private static Result runPrototype(CarRegist registry, String key, int n) throws InterruptedException {
+        // Ukur penggunaan memori sebelum dan setelah membuat N objek lewat prototype
         forceGC();
         long beforeMem = usedMemory();
 
@@ -133,18 +148,20 @@ public class PrototypeVsConstructor2 {
         List<Car> cars = new ArrayList<>(n);
         for (int i = 0; i < n; i++) {
             Car c = registry.getClone(key);
-            // mutate a small field so objects are slightly different
+            // ubah sedikit field agar objek berbeda (contoh: warna)
             c.setColor(c.getColor() + "#" + i);
             cars.add(c);
         }
         long t1 = System.nanoTime();
 
+        // Ukur setelah pembuatan untuk mendapatkan delta memori
         forceGC();
         long afterMem = usedMemory();
         return new Result(t1 - t0, Math.max(0, afterMem - beforeMem));
     }
 
     private static Result runNoPrototype(Car base, int n) throws InterruptedException {
+        // Ukur penggunaan memori sebelum dan setelah membuat N objek via konstruktor
         forceGC();
         long beforeMem = usedMemory();
 
