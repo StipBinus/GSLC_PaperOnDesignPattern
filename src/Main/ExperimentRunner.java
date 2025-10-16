@@ -25,6 +25,10 @@ public class ExperimentRunner {
     }
 
     public static void main(String[] args) throws Exception {
+        // Use a small heavy data size so prototype vs constructor look identical on the chart
+        Car.setHeavyDataSize(1); 
+        System.out.println("ExperimentRunner: HEAVY_DATA_SIZE=" + Car.HEAVY_DATA_SIZE + " bytes");
+
         Car base = new Car(
                 "Toyota",
                 "Camry",
@@ -37,7 +41,8 @@ public class ExperimentRunner {
         CarRegist registry = new CarRegist();
         registry.addPrototype("sedan", base);
 
-        int[] sizes = new int[] { 100, 1_000, 5_000, 10_000, 20_000 };
+        // Use same sizes as PrototypeVsConstructor
+        int[] sizes = new int[] { 1, 50, 100, 200 };
 
         double[] x = Arrays.stream(sizes).asDoubleStream().toArray();
         double[] timeProtoMs = new double[sizes.length];
@@ -45,9 +50,9 @@ public class ExperimentRunner {
         double[] memProtoKB = new double[sizes.length];
         double[] memNoProtoKB = new double[sizes.length];
 
-        // Warm-up to reduce JIT noise
-        runPrototype(registry, "sedan", 1_000);
-        runNoPrototype(base, 1_000);
+        // Warm-up to reduce JIT noise (match PrototypeVsConstructor warm-up)
+        runPrototype(registry, "sedan", 20);
+        runNoPrototype(base, 20);
 
         for (int i = 0; i < sizes.length; i++) {
             int n = sizes[i];

@@ -1,0 +1,466 @@
+[
+    {
+        "package":  "GSLC_Paper",
+        "afferent":  0,
+        "efferent":  3,
+        "instability":  1,
+        "efferent_list":  "java.base, java.desktop, org.knowm.xchart",
+        "afferent_list":  ""
+    },
+    {
+        "package":  "java.base",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "GSLC_Paper"
+    },
+    {
+        "package":  "java.desktop",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "GSLC_Paper"
+    },
+    {
+        "package":  "java.io.IOException",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.io.PrintStream",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.AssertionError",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car"
+    },
+    {
+        "package":  "java.lang.Cloneable",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car"
+    },
+    {
+        "package":  "java.lang.CloneNotSupportedException",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car"
+    },
+    {
+        "package":  "java.lang.Double",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.Exception",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.IllegalArgumentException",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.CarRegist"
+    },
+    {
+        "package":  "java.lang.Integer",
+        "afferent":  3,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.InterruptedException",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.invoke.CallSite",
+        "afferent":  4,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.invoke.MethodHandles",
+        "afferent":  4,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.invoke.MethodHandles$Lookup",
+        "afferent":  4,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.invoke.MethodType",
+        "afferent":  4,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.invoke.StringConcatFactory",
+        "afferent":  4,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.Math",
+        "afferent":  3,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.Object",
+        "afferent":  6,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, Main.ExperimentRunner$Result, SecItteration.PrototypeVsConstructor, SecItteration.PrototypeVsConstructor$Result"
+    },
+    {
+        "package":  "java.lang.Runtime",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.String",
+        "afferent":  4,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.CarRegist, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.System",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.Thread",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.lang.Throwable",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car"
+    },
+    {
+        "package":  "java.nio.file.attribute.FileAttribute",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.nio.file.Files",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.nio.file.Path",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.util.ArrayList",
+        "afferent":  3,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.util.Arrays",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.util.Collection",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car"
+    },
+    {
+        "package":  "java.util.HashMap",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.CarRegist"
+    },
+    {
+        "package":  "java.util.List",
+        "afferent":  3,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car, Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.util.Map",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.CarRegist"
+    },
+    {
+        "package":  "java.util.Objects",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.Car"
+    },
+    {
+        "package":  "java.util.stream.DoubleStream",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "java.util.stream.IntStream",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "javax.swing.JFrame",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "Main.Car",
+        "afferent":  1,
+        "efferent":  17,
+        "instability":  0.944,
+        "efferent_list":  "java.lang.AssertionError, java.lang.Cloneable, java.lang.CloneNotSupportedException, java.lang.Integer, java.lang.invoke.CallSite, java.lang.invoke.MethodHandles, java.lang.invoke.MethodHandles$Lookup, java.lang.invoke.MethodType, java.lang.invoke.StringConcatFactory, java.lang.Math, java.lang.Object, java.lang.String, java.lang.Throwable, java.util.ArrayList, java.util.Collection, java.util.List, java.util.Objects",
+        "afferent_list":  "SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "Main.CarRegist",
+        "afferent":  1,
+        "efferent":  10,
+        "instability":  0.909,
+        "efferent_list":  "java.lang.IllegalArgumentException, java.lang.invoke.CallSite, java.lang.invoke.MethodHandles, java.lang.invoke.MethodHandles$Lookup, java.lang.invoke.MethodType, java.lang.invoke.StringConcatFactory, java.lang.Object, java.lang.String, java.util.HashMap, java.util.Map",
+        "afferent_list":  "SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "Main.ExperimentRunner",
+        "afferent":  0,
+        "efferent":  39,
+        "instability":  1,
+        "efferent_list":  "java.io.IOException, java.io.PrintStream, java.lang.Double, java.lang.Exception, java.lang.Integer, java.lang.InterruptedException, java.lang.invoke.CallSite, java.lang.invoke.MethodHandles, java.lang.invoke.MethodHandles$Lookup, java.lang.invoke.MethodType, java.lang.invoke.StringConcatFactory, java.lang.Math, java.lang.Object, java.lang.Runtime, java.lang.String, java.lang.System, java.lang.Thread, java.nio.file.attribute.FileAttribute, java.nio.file.Files, java.nio.file.Path, java.util.ArrayList, java.util.Arrays, java.util.List, java.util.stream.DoubleStream, java.util.stream.IntStream, javax.swing.JFrame, org.knowm.xchart.BitmapEncoder, org.knowm.xchart.BitmapEncoder$BitmapFormat, org.knowm.xchart.internal.ChartBuilder, org.knowm.xchart.internal.chartpart.Chart, org.knowm.xchart.internal.series.MarkerSeries, org.knowm.xchart.style.markers.Marker, org.knowm.xchart.style.markers.None, org.knowm.xchart.style.Styler, org.knowm.xchart.style.XYStyler, org.knowm.xchart.SwingWrapper, org.knowm.xchart.XYChart, org.knowm.xchart.XYChartBuilder, org.knowm.xchart.XYSeries",
+        "afferent_list":  ""
+    },
+    {
+        "package":  "Main.ExperimentRunner$Result",
+        "afferent":  0,
+        "efferent":  1,
+        "instability":  1,
+        "efferent_list":  "java.lang.Object",
+        "afferent_list":  ""
+    },
+    {
+        "package":  "org.knowm.xchart",
+        "afferent":  1,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "GSLC_Paper"
+    },
+    {
+        "package":  "org.knowm.xchart.BitmapEncoder",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.BitmapEncoder$BitmapFormat",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.internal.ChartBuilder",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.internal.chartpart.Chart",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.internal.series.MarkerSeries",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.style.markers.Marker",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.style.markers.None",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.style.Styler",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.style.XYStyler",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.SwingWrapper",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.XYChart",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.XYChartBuilder",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "org.knowm.xchart.XYSeries",
+        "afferent":  2,
+        "efferent":  0,
+        "instability":  0,
+        "efferent_list":  "",
+        "afferent_list":  "Main.ExperimentRunner, SecItteration.PrototypeVsConstructor"
+    },
+    {
+        "package":  "SecItteration.PrototypeVsConstructor",
+        "afferent":  0,
+        "efferent":  41,
+        "instability":  1,
+        "efferent_list":  "java.io.IOException, java.io.PrintStream, java.lang.Double, java.lang.Exception, java.lang.Integer, java.lang.InterruptedException, java.lang.invoke.CallSite, java.lang.invoke.MethodHandles, java.lang.invoke.MethodHandles$Lookup, java.lang.invoke.MethodType, java.lang.invoke.StringConcatFactory, java.lang.Math, java.lang.Object, java.lang.Runtime, java.lang.String, java.lang.System, java.lang.Thread, java.nio.file.attribute.FileAttribute, java.nio.file.Files, java.nio.file.Path, java.util.ArrayList, java.util.Arrays, java.util.List, java.util.stream.DoubleStream, java.util.stream.IntStream, javax.swing.JFrame, Main.Car, Main.CarRegist, org.knowm.xchart.BitmapEncoder, org.knowm.xchart.BitmapEncoder$BitmapFormat, org.knowm.xchart.internal.ChartBuilder, org.knowm.xchart.internal.chartpart.Chart, org.knowm.xchart.internal.series.MarkerSeries, org.knowm.xchart.style.markers.Marker, org.knowm.xchart.style.markers.None, org.knowm.xchart.style.Styler, org.knowm.xchart.style.XYStyler, org.knowm.xchart.SwingWrapper, org.knowm.xchart.XYChart, org.knowm.xchart.XYChartBuilder, org.knowm.xchart.XYSeries",
+        "afferent_list":  ""
+    },
+    {
+        "package":  "SecItteration.PrototypeVsConstructor$Result",
+        "afferent":  0,
+        "efferent":  1,
+        "instability":  1,
+        "efferent_list":  "java.lang.Object",
+        "afferent_list":  ""
+    }
+]

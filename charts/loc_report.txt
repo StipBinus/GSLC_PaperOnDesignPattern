@@ -1,0 +1,9 @@
+LOC comparison - Prototype vs Constructor
+====================================
+
+N=1: Prototype=12, Constructor=20, Diff=-8 (-40,0%)
+N=2: Prototype=14, Constructor=33, Diff=-19 (-57,6%)
+N=5: Prototype=20, Constructor=72, Diff=-52 (-72,2%)
+
+Conclusion:
+Prototype requires slightly more LOC because of registry and clone usage; the overhead grows with number of created objects in the generated samples.
